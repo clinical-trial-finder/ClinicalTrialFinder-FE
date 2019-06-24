@@ -1,6 +1,6 @@
 [build]
-  base = "demo/"
-  publish = "demo/build/"
+  base = "clinicaltrialfinder/"
+  publish = "clinicaltrialfinder/build/"
 
   # A basic redirect rule
   # For use with react router. Keeps user from leaving index.html when
