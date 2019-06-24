@@ -1,10 +1,10 @@
 const initialState = {};
 
-export const ctfReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default ctfReducer;
+export default reducer;
