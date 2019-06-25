@@ -8,7 +8,8 @@ import {
 
 const initialState = {
   error: "",
-  loggingIn: false
+  loggingIn: false,
+  signedUp: false
 };
 
 export const reducer = (state = initialState, action) => {

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { history } from "../helpers/history";
+
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
@@ -9,8 +11,8 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 //   return axiosWithAuth()
 //     .post("/login", creds)
 //     .then(res => {
-//       localStorage.setItem("token", res.data.payload);
-//       dispatch({ type: LOGIN_SUCCESS });
+//       localStorage.setItem("token", res.data.payload); // determine how the payload looks
+//       dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload });
 //       return true;
 //     })
 //     .catch(err => console.log(err.response));
@@ -20,17 +22,17 @@ export const SIGN_UP_START = "SIGN_UP_START";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
 
-export const signUp = creds => dispatch => {
-  dispatch({ type: SIGN_UP_START });
-  return axiosWithAuth()
-    .post("/signup", creds)
-    .then(res => {
-      localStorage.setItem("token", res.data.payload);
-      dispatch({ type: SIGN_UP_SUCCESS });
-      return true;
-    })
-    .catch(err => console.log(err.response));
-};
+// export const signUp = creds => dispatch => {
+//   dispatch({ type: SIGN_UP_START });
+//   return axiosWithAuth()
+//     .post("/signup", creds)
+//     .then(res => {
+//       localStorage.setItem("token", res.data.payload); // determine what the payload looks like
+//       dispatch({ type: SIGN_UP_SUCCESS });
+//       return true;
+//     })
+//     .catch(err => console.log(err.response));
+// };
 
 export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
