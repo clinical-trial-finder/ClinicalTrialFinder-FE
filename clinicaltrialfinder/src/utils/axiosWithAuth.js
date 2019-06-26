@@ -7,8 +7,10 @@ export const axiosWithAuth = () => {
     headers: {
       Authorization: token
     },
-    baseURL: "http://localhost:5000/api"
+    baseURL: "https://clinical-trial-finder.herokuapp.com"
   });
 };
 
 // need base localhost URL
+
+// axiosWithOutAuth remove const token remove headers
