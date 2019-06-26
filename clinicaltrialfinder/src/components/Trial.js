@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Trial extends Component {
-  render() {
-    return <div />;
-  }
-}
+const Trial = props => {
+  return (
+    <div>
+      <p>Name: {props.trial.brief_title}</p>
+      <p>Trial type: {props.trial.study_type}</p>
+    </div>
+  );
+};
 
 export default Trial;

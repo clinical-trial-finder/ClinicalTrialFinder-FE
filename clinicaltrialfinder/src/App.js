@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
-import TrialsList from "./components/TrialsList";
+import TrialsList from "./views/TrialsList";
 import SignUp from "./components/SignUp";
 
 function App() {
