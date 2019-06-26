@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     e.preventDefault();
     this.props.signUp(this.state.credentials).then(res => {
       if (res) {
-        this.props.history.push("/protected");
+        this.props.history.push("/");
       }
     });
   };
@@ -34,6 +34,7 @@ class SignUp extends React.Component {
     console.log(this.props);
     return (
       <div>
+        <h2>Sign Up</h2>
         <form onSubmit={this.signUp}>
           <input
             type="text"

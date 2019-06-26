@@ -46,8 +46,8 @@ export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 export const getData = data => dispatch => {
   console.log("getData start", data); // don't know what data looks like
   dispatch({ type: FETCH_DATA_START });
-  axios
-    .get("https://clinical-trial-finder.herokuapp.com/temp")
+  return axiosWithAuth()
+    .get("https://clinical-trial-finder.herokuapp.com/studies")
     .then(res => {
       console.log(res);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data }); // find out what payload is set to

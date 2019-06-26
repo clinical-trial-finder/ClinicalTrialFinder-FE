@@ -10,7 +10,7 @@ class TrialsList extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log("trial list this.props", this.props.conditions);
     return (
       <div>
         <h2>Check props</h2>
