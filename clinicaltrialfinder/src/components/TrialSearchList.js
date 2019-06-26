@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TrialsList from "../views/TrialsList";
 import TrialSearch from "./TrialSearch";
+import { connect } from "react-redux";
+import { searchTrial } from "../actions";
 
 class TrialSearchList extends Component {
   componentDidMount() {
@@ -18,4 +20,7 @@ class TrialSearchList extends Component {
   }
 }
 
-export default TrialSearchList;
+export default connect(
+  null,
+  { searchTrial }
+)(TrialSearchList);
