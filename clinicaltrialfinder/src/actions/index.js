@@ -9,7 +9,8 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
-  return axios
+  // return axios
+  return axiosWithAuth()
     .post("https://clinical-trial-finder.herokuapp.com/auth/login", creds)
     .then(res => {
       console.log(res.data);
@@ -54,5 +55,26 @@ export const getData = data => dispatch => {
     })
     .catch(err => {
       dispatch({ type: FETCH_DATA_FAILURE, payload: err }); // find out if error is default
+    });
+};
+
+export const SEARCH_DATA_START = "SEARCH_DATA_START";
+export const SEARCH_DATA_SUCCESS = "SEARCH_DATA_SUCCESS";
+export const SEARCH_DATA_FAILURE = "SEARCH_DATA_FAILURE";
+
+export const searchTrial = param => dispatch => {
+  const updatedParam = param.split("-").join("%");
+  console.log("searchtrial", updatedParam);
+  dispatch({ type: SEARCH_DATA_START });
+  return axios
+    .post(
+      `https://clinical-trial-finder-api.herokuapp.com/api/v1/studies?phase=${updatedParam}`
+    )
+    .then(res => {
+      console.log(res);
+      dispatch({ type: SEARCH_DATA_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: SEARCH_DATA_FAILURE, payload: err });
     });
 };
