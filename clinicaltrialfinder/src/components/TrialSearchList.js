@@ -13,9 +13,12 @@ class TrialSearchList extends Component {
   }
 
   render() {
+    // if (this.props.conditions === []) {
+    //   return <h2>Oops! No results found...</h2>
+    //   <Link to="/protected">Lets try again</Link>
+    // }
     return (
       <div>
-        {/* <TrialSearch /> */}
         <Link to="/protected">Make Another Search</Link>
         <Trials trials={this.props.conditions} />
       </div>
