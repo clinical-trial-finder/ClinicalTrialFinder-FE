@@ -33,20 +33,23 @@ class SignUp extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className="login">
         <h2>Sign Up</h2>
-        <form onSubmit={this.signUp}>
+        <h5>Sign up below</h5>
+        <form className="login-form" onSubmit={this.signUp}>
           <input
             type="text"
             name="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
+            placeholder="username"
           />
           <input
             type="password"
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
+            placeholder="password"
           />
           <button>
             {this.props.signing ? (
