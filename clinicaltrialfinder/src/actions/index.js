@@ -67,7 +67,7 @@ export const searchTrial = param => dispatch => {
   console.log("searchtrial", updatedParam);
   dispatch({ type: SEARCH_DATA_START });
   return axios
-    .post(
+    .get(
       `https://clinical-trial-finder-api.herokuapp.com/api/v1/studies?phase=${updatedParam}`
     )
     .then(res => {
