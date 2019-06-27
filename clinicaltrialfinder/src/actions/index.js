@@ -48,7 +48,7 @@ export const getData = data => dispatch => {
   console.log("getData start", data);
   dispatch({ type: FETCH_DATA_START });
   return axiosWithAuth()
-    .get("https://clinical-trial-finder.herokuapp.com/studies")
+    .get("https://clinical-trial-finder-api.herokuapp.com/api/v1/studies/all")
     .then(res => {
       console.log(res);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
