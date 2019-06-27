@@ -15,8 +15,8 @@ class TrialSearchList extends Component {
   render() {
     return (
       <div>
-        <TrialSearch />
-        <Link to="/protected">Go Back</Link>
+        {/* <TrialSearch /> */}
+        <Link to="/protected">Make Another Search</Link>
         <Trials trials={this.props.conditions} />
       </div>
     );
