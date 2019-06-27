@@ -74,7 +74,8 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: "",
-        searching: true
+        searching: true,
+        header: "Access-Control-Allow-Origin: *"
       };
     case SEARCH_DATA_SUCCESS:
       return {
@@ -85,8 +86,7 @@ export const reducer = (state = initialState, action) => {
     case SEARCH_DATA_FAILURE:
       return {
         ...state,
-        searching: false,
-        error: "No results found"
+        searching: false
       };
 
     default:
