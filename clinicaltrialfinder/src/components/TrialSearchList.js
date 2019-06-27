@@ -4,6 +4,7 @@ import TrialSearch from "./TrialSearch";
 import { connect } from "react-redux";
 import { searchTrial } from "../actions";
 import Trials from "./Trials";
+import { Link } from "react-router-dom";
 
 class TrialSearchList extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class TrialSearchList extends Component {
     return (
       <div>
         <TrialSearch />
+        <Link to="/protected">Go Back</Link>
         <Trials trials={this.props.conditions} />
       </div>
     );
