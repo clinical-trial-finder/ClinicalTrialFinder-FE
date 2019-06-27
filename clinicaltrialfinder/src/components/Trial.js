@@ -16,7 +16,7 @@ const Trial = props => {
         <p>{props.trial.description}</p>
       </div>
       <div className="completion-prob">
-        <p>Trial Success Prediction: </p>
+        <p>Predicted Success Rate: </p>
         <p>{props.trial.completion_prob}</p>
       </div>
     </div>

@@ -63,14 +63,14 @@ export const SEARCH_DATA_SUCCESS = "SEARCH_DATA_SUCCESS";
 export const SEARCH_DATA_FAILURE = "SEARCH_DATA_FAILURE";
 
 export const searchTrial = param => dispatch => {
-  const updatedParam = param.split("-").join("%");
+  const updatedParam = param.split("-").join("20%");
   console.log("searchtrial", updatedParam);
   dispatch({
     type: SEARCH_DATA_START
   });
   return axios
     .get(
-      `https://clinical-trial-finder-api.herokuapp.com/api/v1/studies?phase=${updatedParam}`
+      `https://clinical-trial-finder-api.herokuapp.com/api/v1/studies/search?description=${updatedParam}`
     )
     .then(res => {
       console.log(res);

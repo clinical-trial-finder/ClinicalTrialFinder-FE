@@ -32,11 +32,11 @@
   border-radius: 15px;
   margin: 15px;
   padding: 15px;
+  min-width: 80%;
 }
 
 .trial p {
   margin: 0 auto;
-  text-align: left;
   display: flex;
   /* border: 3px solid green; */
 }
@@ -49,6 +49,23 @@
 }
 
 .main-text {
+  text-align: left;
+  max-width: 70%;
+  /* margin: 5px; */
+}
+
+.completion-prob {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-self: center;
+  margin-left: 10px;
+}
+
+.trial-container {
+  max-width: 100vh;
 }
 
 .trial-search {
