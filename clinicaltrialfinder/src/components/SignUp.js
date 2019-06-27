@@ -35,7 +35,8 @@ class SignUp extends React.Component {
     return (
       <div className="login">
         <h2>Sign Up</h2>
-        <h5>Sign up below</h5>
+        <h5>Create your username</h5>
+        <h5>and password below</h5>
         <form className="login-form" onSubmit={this.signUp}>
           <input
             type="text"
