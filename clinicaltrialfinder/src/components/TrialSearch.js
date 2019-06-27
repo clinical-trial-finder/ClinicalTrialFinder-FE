@@ -25,7 +25,7 @@ class TrialSearch extends Component {
     console.log(this.props);
     return (
       <div className="trial-search">
-        <h2>Search for a study near you!</h2>
+        <h2>What kind of study are you looking for?</h2>
         <form onSubmit={this.onSubmit}>
           <input
             placeholder="Enter your search..."

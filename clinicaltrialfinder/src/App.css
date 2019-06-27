@@ -1,15 +1,9 @@
 .App {
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #f1f2f3;
-  min-height: 100vh;
+  /* min-height: 150vh; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,15 +21,34 @@
 
 .trial {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  /* border: 1px solid pink; */
+  align-content: center;
+  justify-content: center;
+  /* border: 4px solid pink; */
   /* max-width: 250px; */
-  font-size: 0.7em;
+  font-size: 0.75em;
   background: #006989;
   border-radius: 15px;
   margin: 15px;
   padding: 15px;
+}
+
+.trial p {
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  /* border: 3px solid green; */
+}
+.trial p:nth-child(even) {
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  font-size: 0.7em;
+  /* border: 3px solid green; */
+}
+
+.main-text {
 }
 
 .trial-search {
