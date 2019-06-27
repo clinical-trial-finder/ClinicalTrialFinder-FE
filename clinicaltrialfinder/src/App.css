@@ -60,3 +60,59 @@
   text-align: center;
   margin: 10px;
 }
+
+.login {
+  background: #006989;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.login h5 {
+  word-wrap: inherit;
+  font-size: 0.5em;
+  margin: 0 auto;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 15px;
+  justify-content: center;
+  align-content: center;
+}
+
+.login-form input {
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login-form button {
+  border: none;
+  margin-top: 15px;
+  height: 25px;
+  width: 70px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  padding-top: 2px;
+  border-radius: 5px;
+  background: #f98847;
+  color: white;
+  font-weight: bolder;
+}
+
+.login a {
+  text-decoration: none;
+  font-size: 0.5em;
+  margin-top: 15px;
+  color: white;
+}
