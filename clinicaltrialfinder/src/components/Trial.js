@@ -1,5 +1,5 @@
 import React from "react";
-import PercentageCircle from "reactjs-percentage-circle";
+// import PercentageCircle from "reactjs-percentage-circle";
 // import Collapsible from "react-collapsible";
 
 const Trial = props => {

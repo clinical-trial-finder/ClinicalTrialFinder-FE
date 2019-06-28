@@ -7,7 +7,6 @@ import { applyMiddleware, createStore, compose } from "redux";
 import rootReducer from "./reducers";
 // import logger from "redux-logger";
 import thunk from "redux-thunk";
-// import PercentageCircle from "reactjs-percentage-circle";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
