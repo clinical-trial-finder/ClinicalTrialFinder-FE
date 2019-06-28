@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import TrialsList from "./views/TrialsList";
 import SignUp from "./components/SignUp";
+import TrialSearchList from "./components/TrialSearchList";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <PrivateRoute path="/protected" component={TrialsList} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/search/:query" component={TrialSearchList} />
         </div>
       </div>
     </Router>

@@ -3,7 +3,7 @@ import Trial from "./Trial";
 
 const Trials = props => {
   return (
-    <div>
+    <div className="trial-container">
       {props.trials.map(trial => (
         <Trial trial={trial} />
       ))}

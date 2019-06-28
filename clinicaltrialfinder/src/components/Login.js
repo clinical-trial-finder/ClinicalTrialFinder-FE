@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 import { login } from "../actions";
 
@@ -32,20 +33,24 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="login">
         <h2>Login</h2>
-        <form onSubmit={this.login}>
+        <h5>Sign in below</h5>
+        <h5>to get started</h5>
+        <form className="login-form" onSubmit={this.login}>
           <input
             type="text"
             name="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
+            placeholder="username"
           />
           <input
             type="password"
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
+            placeholder="password"
           />
           <button>
             {this.props.loggingIn ? (
@@ -54,6 +59,7 @@ class Login extends React.Component {
               "Log in"
             )}
           </button>
+          <Link to="/signup">Click me to sign up! It's free.</Link>
         </form>
       </div>
     );

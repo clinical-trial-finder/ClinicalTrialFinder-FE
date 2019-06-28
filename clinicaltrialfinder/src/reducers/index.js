@@ -6,13 +6,17 @@ import {
   FETCH_DATA_FAILURE,
   SIGN_UP_START,
   SIGN_UP_SUCCESS,
-  SIGN_UP_FAILURE
+  SIGN_UP_FAILURE,
+  SEARCH_DATA_START,
+  SEARCH_DATA_SUCCESS,
+  SEARCH_DATA_FAILURE
 } from "../actions";
 
 const initialState = {
   error: "",
   loggingIn: false,
   signedUp: false,
+  searching: false,
   // token: localStorage.getItem("token"),
   conditions: []
 };
@@ -65,6 +69,24 @@ export const reducer = (state = initialState, action) => {
         ...state,
         fetchingData: false,
         error: action.payload
+      };
+    case SEARCH_DATA_START:
+      return {
+        ...state,
+        error: "",
+        searching: true,
+        header: "Access-Control-Allow-Origin: *"
+      };
+    case SEARCH_DATA_SUCCESS:
+      return {
+        ...state,
+        searching: false,
+        conditions: action.payload
+      };
+    case SEARCH_DATA_FAILURE:
+      return {
+        ...state,
+        searching: false
       };
 
     default:

@@ -9,11 +9,12 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
-  return axios
+  // return axios
+  return axiosWithAuth()
     .post("https://clinical-trial-finder.herokuapp.com/auth/login", creds)
     .then(res => {
       console.log(res.data);
-      localStorage.setItem("token", res.data.token); // determine how the payload looks
+      localStorage.setItem("token", res.data.token);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload });
       return true;
     })
@@ -32,7 +33,7 @@ export const signUp = creds => dispatch => {
     .post("https://clinical-trial-finder.herokuapp.com/auth/register", creds)
     .then(res => {
       console.log(res);
-      localStorage.setItem("token", res.data.token); // determine what the payload looks like
+      localStorage.setItem("token", res.data.token);
       dispatch({ type: SIGN_UP_SUCCESS });
       return true;
     })
@@ -44,15 +45,41 @@ export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 
 export const getData = data => dispatch => {
-  console.log("getData start", data); // don't know what data looks like
+  console.log("getData start", data);
   dispatch({ type: FETCH_DATA_START });
   return axiosWithAuth()
-    .get("https://clinical-trial-finder.herokuapp.com/studies")
+    .get("https://clinical-trial-finder-api.herokuapp.com/api/v1/studies/all")
     .then(res => {
       console.log(res);
-      dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data }); // find out what payload is set to
+      dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      dispatch({ type: FETCH_DATA_FAILURE, payload: err }); // find out if error is default
+      dispatch({ type: FETCH_DATA_FAILURE, payload: err });
+    });
+};
+
+export const SEARCH_DATA_START = "SEARCH_DATA_START";
+export const SEARCH_DATA_SUCCESS = "SEARCH_DATA_SUCCESS";
+export const SEARCH_DATA_FAILURE = "SEARCH_DATA_FAILURE";
+
+export const searchTrial = param => dispatch => {
+  const updatedParam = param.split("-").join("20%");
+  console.log("searchtrial", updatedParam);
+  dispatch({
+    type: SEARCH_DATA_START
+  });
+  return axios
+    .get(
+      `https://clinical-trial-finder-api.herokuapp.com/api/v1/studies/search?description=${updatedParam}`
+    )
+    .then(res => {
+      console.log(res);
+      dispatch({
+        type: SEARCH_DATA_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({ type: SEARCH_DATA_FAILURE, payload: err });
     });
 };
