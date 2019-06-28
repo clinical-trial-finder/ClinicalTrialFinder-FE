@@ -18,8 +18,8 @@ class TrialSearchList extends Component {
     //   <Link to="/protected">Lets try again</Link>
     // }
     return (
-      <div>
-        <Link to="/protected">Make Another Search</Link>
+      <div className="trial-search-list">
+        ><Link to="/protected">Make Another Search</Link>
         <Trials trials={this.props.conditions} />
       </div>
     );

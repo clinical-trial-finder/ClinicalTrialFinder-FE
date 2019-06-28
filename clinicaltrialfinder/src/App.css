@@ -1,6 +1,3 @@
-.App {
-}
-
 .App-header {
   background-color: #f1f2f3;
   min-height: 100vh;
@@ -145,4 +142,14 @@
   font-size: 0.5em;
   margin-top: 15px;
   color: white;
+}
+
+.trial-search-list a {
+  text-decoration: none;
+  font-size: 0.5em;
+  margin-top: 15px;
+  color: #006989;
+  margin-left: 15px;
+  font-weight: bolder;
+  font-size: 20px;
 }
