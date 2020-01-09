@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TrialsList from '../views/TrialsList';
-import TrialSearch from './TrialSearch';
+// import TrialsList from '../views/TrialsList';
+// import TrialSearch from './TrialSearch';
 import { connect } from 'react-redux';
 import { searchTrial } from '../actions';
 import Trials from './Trials';

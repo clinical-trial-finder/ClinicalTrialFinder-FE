@@ -59,6 +59,12 @@
   align-content: center;
   align-self: center;
   margin-left: 10px;
+  border: 3px solid white;
+  border-radius: 15px;
+}
+
+.completion-prob p:nth-child(2) {
+  font-size: 1em;
 }
 
 .trial-container {
@@ -72,6 +78,10 @@
   align-content: center;
   align-items: center;
   color: #002732;
+}
+
+Dropdown {
+  max-width: 40%;
 }
 
 .search-input {
